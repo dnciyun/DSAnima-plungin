@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "extensions": [
+    {
+      "manifest": {
+        "schema": 1,
+        "id": "dsanima-picture-crisp",
+        "name": "清晰增强",
+        "version": "1.1.1",
+        "kind": "picture-pack",
+        "description": "锐度、线条强化、通透度（去雾）与对比/饱和/亮度/gamma/暗部/色温色调。默认值等于原样放过，预设各自叠一组取值。",
+        "author": "DSAnima",
+        "license": "MIT",
+        "minAppVersion": "1.0.3",
+        "files": [
+          {
+            "path": "shaders/picture.glsl",
+            "size": 14312,
+            "sha256": "707701478ad76e4ff255654ddeb73d1c13effbcdc5376bdfd5c65bafa3d2bde8"
+          }
+        ],
+        "payload": {
+          "picture": {
+            "template": "shaders/picture.glsl",
+            "hint": "默认全中性（不改画面）。锐度在缩放前补线条，线条只压暗侧（不起白边），通透度管\"发灰/蒙雾\"，调色放最后。",
+            "params": [
+              {
+                "key": "sharpen",
+                "label": "锐度",
+                "min": 0,
+                "max": 2,
+                "step": 0.05,
+                "default": 0.0,
+                "group": "锐度与线条"
+              },
+              {
+                "key": "line",
+                "label": "线条强化",
+                "min": 0,
+                "max": 1,
+                "step": 0.05,
+                "default": 0.0,
+                "group": "锐度与线条"
+              },
+              {
+                "key": "clarity",
+                "label": "通透度",
+                "min": 0,
+                "max": 2,
+                "step": 0.05,
+                "default": 0.0,
+                "group": "锐度与线条"
+              },
+              {
+                "key": "contrast",
+                "label": "对比度",
+                "min": 0.5,
+                "max": 1.5,
+                "step": 0.01,
+                "default": 1.0,
+                "group": "对比与饱和"
+              },
+              {
+                "key": "saturation",
+                "label": "饱和度",
+                "min": 0,
+                "max": 2,
+                "step": 0.01,
+                "default": 1.0,
+                "group": "对比与饱和"
+              },
+              {
+                "key": "brightness",
+                "label": "亮度",
+                "min": -0.3,
+                "max": 0.3,
+                "step": 0.01,
+                "default": 0.0,
+                "group": "亮度与暗部"
+              },
+              {
+                "key": "gamma",
+                "label": "伽马",
+                "min": 0.5,
+                "max": 2.5,
+                "step": 0.01,
+                "default": 1.0,
+                "group": "亮度与暗部"
+              },
+              {
+                "key": "dark_lift",
+                "label": "暗部提升",
+                "min": -0.2,
+                "max": 0.3,
+                "step": 0.01,
+                "default": 0.0,
+                "group": "亮度与暗部"
+              },
+              {
+                "key": "temperature",
+                "label": "色温",
+                "min": -0.2,
+                "max": 0.2,
+                "step": 0.005,
+                "default": 0.0,
+                "group": "色温与色调",
+                "unit": "暖→冷"
+              },
+              {
+                "key": "tint",
+                "label": "色调",
+                "min": -0.15,
+                "max": 0.15,
+                "step": 0.005,
+                "default": 0.0,
+                "group": "色温与色调",
+                "unit": "品→绿"
+              }
+            ],
+            "presets": [
+              {
+                "id": "crisp",
+                "name": "清晰",
+                "description": "推荐：线条细而实，不糊。",
+                "values": {
+                  "sharpen": 1.0,
+                  "line": 0.45
+                },
+                "upscale": "anime4k"
+              },
+              {
+                "id": "soft",
+                "name": "柔和",
+                "description": "片源本身很锐、或有噪点时用。",
+                "values": {
+                  "sharpen": 0.5,
+                  "line": 0.2
+                },
+                "upscale": "anime4k"
+              },
+              {
+                "id": "lines",
+                "name": "线条优先",
+                "description": "老番/低清源：线特别淡的时候。",
+                "values": {
+                  "sharpen": 0.8,
+                  "line": 0.75,
+                  "contrast": 1.02
+                },
+                "upscale": "anime4k"
+              },
+              {
+                "id": "warm",
+                "name": "暖色",
+                "description": "偏黄的片子（回忆/黄昏场景）随手加一点暖。",
+                "values": {
+                  "sharpen": 0.9,
+                  "line": 0.4,
+                  "temperature": 0.03,
+                  "saturation": 1.04
+                }
+              },
+              {
+                "id": "dehaze",
+                "name": "去雾",
+                "description": "片源发灰、像蒙了层雾/泛白时用：压黑位 + 提局部对比，锐度收着点免得起白边。",
+                "values": {
+                  "clarity": 0.55,
+                  "contrast": 1.03,
+                  "dark_lift": -0.05,
+                  "gamma": 0.97,
+                  "saturation": 0.99,
+                  "sharpen": 0.35,
+                  "line": 0.15
+                }
+              },
+              {
+                "id": "extreme",
+                "name": "极",
+                "description": "参数拉满：最锐最重（也可能起白边/虹边，看片源吃不吃得住）。",
+                "values": {
+                  "sharpen": 1.95,
+                  "line": 0.95,
+                  "clarity": 1.6,
+                  "contrast": 1.15,
+                  "saturation": 1.12
+                }
+              }
+            ]
+          }
+        }
+      },
+      "url": "packs/dsanima-picture-crisp-1.1.1.zip",
+      "size": 7070,
+      "sha256": "6440f4e1e8fbebc476a8bd1a4d4814b337a568db9b165908e83d78d9fdbfb93f"
+    }
+  ]
+}
