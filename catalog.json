@@ -5,7 +5,7 @@
       "manifest": {
         "schema": 1,
         "id": "dsanima-audio",
-        "name": "DSAnima 音效包",
+        "name": "音效包",
         "version": "1.0.0",
         "kind": "audio-pack",
         "description": "六档音效：人声增强 / 低音增强 / 哈曼风格 / 影院感 / 小音量等响 / 耳机空间感。装完在播放器设置 →「音效」里选档，右键菜单也能切。",
@@ -135,14 +135,14 @@
         }
       },
       "url": "packs/dsanima-audio-1.0.0.zip",
-      "size": 1003,
-      "sha256": "ab80a58772c7118d598e1458b73987e93c4da92d47b59e71af966ef273df7ac8"
+      "size": 1002,
+      "sha256": "8813a228cc13859b3834ae49e098457b9d03cbf791f67ed8afe1501ad1b7b8a3"
     },
     {
       "manifest": {
         "schema": 1,
         "id": "dsanima-picture",
-        "name": "画面调节（合并版）",
+        "name": "画面调节包",
         "version": "2.0.0",
         "kind": "picture-pack",
         "description": "单文件的画面调节模板：锐化 / 线条 / 通透 / 降噪 / 去色带 / 调色一次算完。合并了原「清晰增强」与动漫调色、夜景、老番修复三组预设。",
@@ -429,14 +429,14 @@
         }
       },
       "url": "packs/dsanima-picture-2.0.0.zip",
-      "size": 4472,
-      "sha256": "3b0e371c75836f90e7d05661d07b75b702a70c6270a7223f9c70947d470deb3c"
+      "size": 4466,
+      "sha256": "e64c27aa4ddff91ea9733a66f06d0686aec42de37bbe8fe60b507c6698004351"
     },
     {
       "manifest": {
         "schema": 1,
         "id": "dsanima-sr",
-        "name": "线条实（超分+线条）",
+        "name": "超分包",
         "version": "1.0.0",
         "kind": "shader-pack",
         "description": "自适应锐化（边缘感知、限幅防白边）+ 线条压暗。1080p→1600p 实测梯度 +18%、白边与原始持平；专治“线条发虚”。合并自原「线条实/柔/极」三包，取实测推荐那一档。",
@@ -467,8 +467,8 @@
         }
       },
       "url": "packs/dsanima-sr-1.0.0.zip",
-      "size": 4050,
-      "sha256": "e9ac348d34352e3943919e5ebc615fee69ffd81d27ce19d64542892372afadad"
+      "size": 4042,
+      "sha256": "b23ee9493d266477a7e3b20a47060f172d15eda9baa38d0f1244d7c9df42294f"
     }
   ]
 }
