@@ -4,6 +4,143 @@
     {
       "manifest": {
         "schema": 1,
+        "id": "dsanima-audio",
+        "name": "DSAnima 音效包",
+        "version": "1.0.0",
+        "kind": "audio-pack",
+        "description": "六档音效：人声增强 / 低音增强 / 哈曼风格 / 影院感 / 小音量等响 / 耳机空间感。装完在播放器设置 →「音效」里选档，右键菜单也能切。",
+        "author": "DSAnima",
+        "license": "MIT",
+        "minAppVersion": "1.1.0",
+        "files": [],
+        "payload": {
+          "surface": "player.audio",
+          "surfaceSchema": 1,
+          "presets": [
+            {
+              "id": "vocal",
+              "name": "人声增强",
+              "description": "对白靠前、低频让位；配「对白压缩」更清楚。",
+              "values": {
+                "b31": -2,
+                "b63": -1,
+                "b125": 0,
+                "b250": -1,
+                "b500": 1,
+                "b1k": 2,
+                "b2k": 3,
+                "b4k": 2,
+                "b8k": 1,
+                "b16k": 0,
+                "preamp": -3.5,
+                "crossfeed": 0
+              }
+            },
+            {
+              "id": "bass",
+              "name": "低音增强",
+              "description": "低频整体抬升，爆炸/音乐更足。",
+              "values": {
+                "b31": 6,
+                "b63": 5,
+                "b125": 3,
+                "b250": 0,
+                "b500": 0,
+                "b1k": 0,
+                "b2k": 0,
+                "b4k": 0,
+                "b8k": 0,
+                "b16k": 0,
+                "preamp": -4,
+                "crossfeed": 0
+              }
+            },
+            {
+              "id": "harman",
+              "name": "哈曼风格",
+              "description": "通用风格曲线：低频略多、人声靠前。",
+              "values": {
+                "b31": 5,
+                "b63": 4,
+                "b125": 2,
+                "b250": 0,
+                "b500": -1,
+                "b1k": -1,
+                "b2k": 0,
+                "b4k": 1,
+                "b8k": 2,
+                "b16k": 1,
+                "preamp": -4,
+                "crossfeed": 0
+              }
+            },
+            {
+              "id": "cinema",
+              "name": "影院感",
+              "description": "低频 + 高频延伸 + 耳机交叉馈电。",
+              "values": {
+                "b31": 4,
+                "b63": 3,
+                "b125": 1,
+                "b250": 0,
+                "b500": 0,
+                "b1k": 0,
+                "b2k": 1,
+                "b4k": 1,
+                "b8k": 2,
+                "b16k": 2,
+                "preamp": -3.5,
+                "crossfeed": 0.35
+              }
+            },
+            {
+              "id": "loudness",
+              "name": "小音量等响",
+              "description": "音量小时低频与高频按等响曲线补回来。",
+              "values": {
+                "b31": 6,
+                "b63": 5,
+                "b125": 3,
+                "b250": 1,
+                "b500": 0,
+                "b1k": 0,
+                "b2k": 1,
+                "b4k": 2,
+                "b8k": 3,
+                "b16k": 3,
+                "preamp": -4,
+                "crossfeed": 0
+              }
+            },
+            {
+              "id": "spatial",
+              "name": "耳机空间感",
+              "description": "只做交叉馈电：声音从「贴耳」挪到面前。",
+              "values": {
+                "b31": 0,
+                "b63": 0,
+                "b125": 0,
+                "b250": 0,
+                "b500": 0,
+                "b1k": 0,
+                "b2k": 0,
+                "b4k": 0,
+                "b8k": 0,
+                "b16k": 0,
+                "preamp": 0,
+                "crossfeed": 0.5
+              }
+            }
+          ]
+        }
+      },
+      "url": "packs/dsanima-audio-1.0.0.zip",
+      "size": 1003,
+      "sha256": "ab80a58772c7118d598e1458b73987e93c4da92d47b59e71af966ef273df7ac8"
+    },
+    {
+      "manifest": {
+        "schema": 1,
         "id": "dsanima-picture",
         "name": "画面调节（合并版）",
         "version": "2.0.0",
